@@ -2,7 +2,6 @@
     const { counter, inc, dec,double } = useSharedCounter()
     const router = useRouter();
     const { $clientId }= useNuxtApp()
-    console.log($clientId)
 </script>
 
 <template>
