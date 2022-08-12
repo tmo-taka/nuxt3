@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useLanguage } from '@/store/language'
 
 type Obj = {
     test: string,
@@ -11,7 +12,7 @@ type Object = {
     obj: Obj
 }
 const dummy:Object = {
-    array: ['test', ],
+    array: ['test'],
     obj:{
         test:'111',
         weight: 2,
@@ -28,4 +29,13 @@ console.log(weak.get(e));
 
 const {obj:{dist=500}} = dummy;
 console.log(dist)
+
+const languages = useLanguage();
+
 </script>
+
+<template>
+    <div>languageは
+    <span v-for="la in languages.languages" :id="la">{{la}}</span>
+    です。</div>
+</template>

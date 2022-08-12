@@ -9,4 +9,8 @@
  - useRuntimeConfig()はpluginsかscript setupの中で使うでないとエラー
 
  ## tailwind.cssについて
-    - [参考記事](https://zenn.dev/one_dock/articles/e7a4364c90d28f)
+   - [参考記事](https://zenn.dev/one_dock/articles/e7a4364c90d28f)
+
+ ## Nuxt Bridgeについて
+   - compositionAPIをauto importはしてくれていそうだけれど、vscodeがついて来れていない
+   [参考記事](https://github.com/nuxt/bridge/issues/236)
