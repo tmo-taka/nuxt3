@@ -8,7 +8,7 @@ export const useLanguage = defineStore('language',{
     },
     actions: {
         setLanguage(val :string){
-            this.language.push(val)
+            this.languages.push(val)
         }
     }
 })
