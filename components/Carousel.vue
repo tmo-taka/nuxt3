@@ -42,7 +42,6 @@ const pushArray = ():void => {
 }
 
 const updateInputValue = (event: Event):void =>{
-    console.log(event)
     //NOTE: NULL値の可能性あるためif文作成
     if (!(event.target instanceof HTMLInputElement)) {
         return;
