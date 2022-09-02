@@ -15,6 +15,7 @@ export default defineNuxtConfig({
                 },
             },
         },
+        transpile: ['@heroicons/vue']
     },
     buildModules: ['@pinia/nuxt'],
 })

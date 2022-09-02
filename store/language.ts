@@ -3,7 +3,7 @@ import {defineStore} from 'pinia'
 export const useLanguage = defineStore('language',{
     state: ()=> {
         return {
-            languages: readonly(['ja'] as string[])
+            languages: ['ja']
         }
     },
     actions: {
