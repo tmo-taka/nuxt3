@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+    definePageMeta({
+        title: "TOPページです"
+    });
 </script>
 <template>
     <NuxtLayout>
