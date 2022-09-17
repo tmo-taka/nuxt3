@@ -1,7 +1,12 @@
 <script setup lang="ts">
-    import { useInputs } from '@/store/form'
+    import { useInputs } from '@/store/form';
+    const { signIn } = useAuth();
 
-    const inputs = useInputs();
+    const {inputs} = useInputs();
+
+    const submit = ():void => {
+        signIn(inputs.email, inputs.password)
+    }
 </script>
 
 <template>
@@ -16,7 +21,7 @@
                 <dt>PassWord</dt>
                 <dd><PartsTextForm :type="'password'"/></dd>
             </dl>
-            {{inputs}}
+            <button class="btn btn-outline btn-primary" @click="submit()">認証する</button>
         </div>
     </div>
 </template>

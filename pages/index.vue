@@ -1,8 +1,5 @@
 <script setup lang="ts">
     const { signIn,signOut,token } = useAuth()
-    onMounted(() => {
-        signIn('t.tkorock221@gmail.com','Data1192a');
-    })
 </script>
 <template>
     <NuxtLayout>
