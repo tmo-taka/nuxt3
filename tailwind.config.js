@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const myColors = {
-    primary: 'rgb(132 204 22)',
+    primary: '#c53030',
     sub: 'rgb(190 242 100)',
     base: '#fffff9'
 }
@@ -25,7 +25,8 @@ module.exports = {
         mytheme: {
           // lightを上書く必要あり
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          primary: myColors.primary
+          primary: myColors.primary,
+          base: myColors.base,
         }
       }
     ]

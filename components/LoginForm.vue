@@ -49,7 +49,7 @@
 <template>
     <input type="checkbox" id="login-modal" class="modal-toggle"/>
     <div class="modal">
-        <div class="modal-box card card-compact w-96 bg-base-100 shadow-xl mx-auto p-8">
+        <div class="modal-box card card-compact w-96 bg-base shadow-xl mx-auto p-8">
             <div v-if="loadingFlag" className="flex justify-center">
                 <div className="animate-ping h-2 w-2 bg-primary rounded-full"></div>
                 <div className="animate-ping h-2 w-2 bg-primary rounded-full mx-4"></div>
@@ -64,7 +64,7 @@
                         <dd><PartsAlert :type="data.name" /></dd>
                     </dl>
                     <div class="text-center">
-                        <button class="btn btn-outline btn-primary" @click="submit()">認証する</button>
+                        <button class="btn btn-primary" @click="submit()">認証する</button>
                     </div>
                 </div>
             </div>
