@@ -16,19 +16,19 @@ module.exports = {
   theme: {
     extend: {
       colors: myColors
-
     }
   },
-  plugins: [require("daisyui")],
 
   daisyui: {
     themes: [
       {
-        "light":{
+        mytheme: {
+          // lightを上書く必要あり
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          myColors
+          primary: myColors.primary
         }
       }
     ]
-  }
+  },
+  plugins: [require("daisyui")],
 }

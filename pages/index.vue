@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    const { signIn,signOut,token } = useAuth()
 </script>
 <template>
     <NuxtLayout>
