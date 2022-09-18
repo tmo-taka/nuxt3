@@ -39,6 +39,7 @@
                 <dl v-for="data in formData" :key="data.name" class="mb-6">
                     <dt class="mb-2">{{conversionUpper(data.name)}}</dt>
                     <dd><PartsTextForm :type="data.name"/></dd>
+                    <dd><PartsAlert :type="data.name" /></dd>
                 </dl>
                 <div class="text-center">
                     <button class="btn btn-outline btn-primary" @click="submit()">認証する</button>

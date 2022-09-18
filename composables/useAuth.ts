@@ -4,9 +4,11 @@ import {
     signOut as firebaseSignOut,
     onAuthStateChanged,
 } from 'firebase/auth'
+import { useInputs } from '@/store/form'
 
 export const useAuth = () => {
     const token = useState<string | null>('token', () => null)
+    const { setError, resetErrors } = useInputs();
 
     async function signIn(email: string, password: string) {
         return await new Promise<void>((resolve,reject) => {
@@ -17,11 +19,12 @@ export const useAuth = () => {
                     .getIdToken()
                     .then((idToken) => {
                         token.value = idToken
+                        resetErrors()
                         resolve()
                     })
-                    .catch(reject)
+                    .catch((reject) => setError('password','パスワードが正しくありません'))
                 })
-                .catch(reject)
+                .catch((reject) => setError('email','メールアドレスが正しくありません'))
         })
     }
 
