@@ -4,11 +4,11 @@ import {
     signOut as firebaseSignOut,
     onAuthStateChanged,
 } from 'firebase/auth'
-import { useInputs } from '@/store/form'
+import { useErrors } from '@/store/error';
 
 export const useAuth = () => {
     const token = useState<string | null>('token', () => null)
-    const { setError, resetErrors } = useInputs();
+    const { setError, resetErrors } = useErrors();
 
     async function signIn(email: string, password: string) {
         return await new Promise<void>((resolve,reject) => {

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-    import { Errors ,useInputs } from '@/store/form'
+    import { Errors ,useErrors } from '@/store/error'
     type Props = {
         type : keyof Errors
     }
 
-    const {errors} = useInputs();
+    const {errors} = useErrors();
     const props:Props = withDefaults(defineProps<Props>(),{
         type: 'email'
     })
