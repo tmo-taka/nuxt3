@@ -1,7 +1,8 @@
 import { initializeApp } from 'firebase/app'
+import { getFirestore } from "firebase/firestore"
 import { defineNuxtPlugin } from '#app'
 
-export default defineNuxtPlugin(() => {
+export default defineNuxtPlugin((nuxtApp) => {
     const config = useRuntimeConfig();
     const firebaseConfig ={
         apiKey: config.FIREBASE_API_KEY,
@@ -9,5 +10,7 @@ export default defineNuxtPlugin(() => {
         projectId: config.FIREBASE_PROJECT_ID,
     }
 
-    initializeApp(firebaseConfig)
+    const firebase = initializeApp(firebaseConfig)
+    const db = getFirestore(firebase)
+    nuxtApp.provide('db',db)
 })

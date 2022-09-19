@@ -1,6 +1,8 @@
 <script setup lang="ts">
     import { useInputs, Inputs } from '@/store/form';
-    const { signIn,token } = useAuth();
+
+    const { getUser, name } = useUsers()
+    const { signIn, token , user } = useAuth();
 
     const {inputs} = useInputs();
     const loadingFlag = useState<boolean>('loadingFlag',() => false)
@@ -41,6 +43,7 @@
         changeLoadingFlag();
         signIn(inputs.email, inputs.password).then((result) => {
             if(token.value){
+                getUser(user);
                 displayModal(false);
             }
         })

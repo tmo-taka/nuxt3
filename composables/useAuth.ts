@@ -2,12 +2,14 @@ import {
     getAuth,
     signInWithEmailAndPassword,
     signOut as firebaseSignOut,
-    onAuthStateChanged,
+    User,
+    onAuthStateChanged
 } from 'firebase/auth'
 import { useErrors } from '@/store/error';
 
 export const useAuth = () => {
     const token = useState<string | null>('token', () => null)
+    const user = useState<User | null>('user',()=> null)
     const { setError, resetErrors } = useErrors();
 
     async function signIn(email: string, password: string) {
@@ -19,6 +21,7 @@ export const useAuth = () => {
                     .getIdToken()
                     .then((idToken) => {
                         token.value = idToken
+                        user.value = auth.currentUser
                         resetErrors()
                         resolve()
                     })
@@ -49,5 +52,6 @@ export const useAuth = () => {
         signIn,
         signOut,
         token,
+        user
     }
 }
