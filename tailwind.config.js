@@ -15,7 +15,22 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: myColors
+      colors: myColors,
+      keyframes: {
+        move: {
+          '0%': {	transform: 'translate(0, 0)'},
+          '5%': {	transform: 'translate(-5px, -0)'},
+          '10%': {	transform: 'translate(5px, 0)'},
+          '15%': {	transform: 'translate(-5px, -0)'},
+          '20%': {	transform: 'translate(5px, 0)'},
+          '25%': {	transform: 'translate(-5px, -0)'},
+          '30%': {	transform: 'translate(0, 0)'},
+          '100%': {	transform: 'translate(0, 0)'}
+        }
+      },
+      animation: {
+        'move-lr': 'move 1.5s ease .5s 1 forwards'
+      }
     }
   },
 

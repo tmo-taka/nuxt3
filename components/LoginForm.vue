@@ -39,10 +39,11 @@
             changeLoadingFlag();
         }, 3000);
         changeLoadingFlag();
-        signIn(inputs.email, inputs.password);
-        if(token.value){
-            displayModal(false);
-        }
+        signIn(inputs.email, inputs.password).then((result) => {
+            if(token.value){
+                displayModal(false);
+            }
+        })
     }
 </script>
 
@@ -56,7 +57,7 @@
                 <div className="animate-ping h-2 w-2 bg-primary rounded-full"></div>
             </div>
             <div v-else>
-                <div class="mb-6 text-center">Form</div>
+                <div class="mb-6 text-center">Hello!</div>
                 <div>
                     <dl v-for="data in formData" :key="data.name" class="mb-6">
                         <dt class="mb-2">{{conversionUpper(data.name)}}</dt>
@@ -64,7 +65,7 @@
                         <dd><PartsAlert :type="data.name" /></dd>
                     </dl>
                     <div class="text-center">
-                        <button class="btn btn-primary" @click="submit()">認証する</button>
+                        <button class="btn btn-primary" @click="submit()">ログインする</button>
                     </div>
                 </div>
             </div>

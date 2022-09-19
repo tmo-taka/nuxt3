@@ -22,9 +22,12 @@ export const useAuth = () => {
                         resetErrors()
                         resolve()
                     })
-                    .catch((reject) => setError('password','パスワードが正しくありません'))
+                    .catch((reject) => reject)
                 })
-                .catch((reject) => setError('email','メールアドレスが正しくありません'))
+                .catch((reject) => {
+                    resetErrors();
+                    reject.message.includes('email') ? setError('email','メールアドレスが正しくありません') :setError('password','パスワードが正しくありません')
+                })
         })
     }
 

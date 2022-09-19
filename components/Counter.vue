@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// テスト用
 import { ref } from 'vue';
 
     const { counter, inc, dec, double } = useSharedCounter()
