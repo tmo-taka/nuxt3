@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
     const { name } = useUsers()
+    // nameの値を監視したいな...
     const { token } = useAuth()
 
     const getName = ():string | unknown => {
