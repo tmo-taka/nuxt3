@@ -40,6 +40,7 @@ export const useAuth = () => {
         firebaseSignOut(auth)
             .then(() => {
                 token.value = null
+                user.value = null
                 resolve()
             })
             .catch((error) => {
