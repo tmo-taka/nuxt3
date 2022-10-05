@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
     const { name } = useUsers()
+    const { token } = useAuth()
 
     const getName = ():string | unknown => {
         const  loginName:string | unknown = name.value ? name.value : undefined
