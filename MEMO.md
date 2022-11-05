@@ -19,3 +19,8 @@
 
 ## plugin
 - `*.client.ts`などクライアントをつけると勝手にクライアント実行になってくれる。
+
+## Fetch
+- [参考記事](https://zenn.dev/ytr0903/articles/6acccb5fa816ee)
+  キャッシュ値なので用いることができるのがuseAsyncData、ただuseFetchはoptionでkeyの指定が可能
+  `$fetch`を使うメリットとして、SSRでNuxt3内部のAPI Routesにアクセスする際に内部アクセスで処理される
