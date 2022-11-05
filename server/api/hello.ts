@@ -1,3 +1,1 @@
-import { defineEventHandler } from 'h3';
-
-export default defineEventHandler(() => 'Test get handler')
+export default (req, res) => 'Hello Nuxt3 from server!'
