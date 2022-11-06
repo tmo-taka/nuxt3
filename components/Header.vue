@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <header class="font-bold py-6 px-3 text-left">
+    <header class="font-bold py-6 px-3 text-left flex">
         <div>Firebase練習用</div>
         <button v-if="token" @click="clickSingOut()">サインアウトする</button>
     </header>

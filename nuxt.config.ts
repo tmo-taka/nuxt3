@@ -1,4 +1,5 @@
-import { defineNuxtConfig } from 'nuxt'
+// NOTE: RC6の場合は必要
+// import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -9,15 +10,11 @@ export default defineNuxtConfig({
         FIREBASE_AUTH_DOMAIN: process.env.FIREBASE_AUTH_DOMAIN || '',
         FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || '',
     },
+    postcss: {
+        plugins: { tailwindcss: {} }
+    },
     css: ["@/assets/tailwind.css"],
     build: {
-        postcss: {
-            postcssOptions: {
-                plugins: {
-                    tailwindcss: {},
-                },
-            },
-        },
         transpile: ['@heroicons/vue']
     },
     buildModules: ['@pinia/nuxt'],
