@@ -9,8 +9,6 @@ export default async (request, response) => {
         projectId: process.env.FIREBASE_PROJECT_ID,
     }
 
-    console.log(admin);
-
     const firebase = (admin.apps.length === 0) ? initializeApp(firebaseConfig): undefined
     const db = getFirestore(firebase)
     return db
