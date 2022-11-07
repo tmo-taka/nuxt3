@@ -1,4 +1,5 @@
-import { initializeApp } from 'firebase-admin/app'
+import admin from 'firebase-admin';
+import { initializeApp} from 'firebase-admin/app'
 import { getFirestore } from "firebase-admin/firestore"
 
 export default async (request, response) => {
@@ -8,8 +9,10 @@ export default async (request, response) => {
         projectId: process.env.FIREBASE_PROJECT_ID,
     }
 
-    const firebase = initializeApp(firebaseConfig)
-    const db = getFirestore(firebase)
+    console.log(admin);
 
+    const firebase = (admin.apps.length === 0) ? initializeApp(firebaseConfig): undefined
+    const db = getFirestore(firebase)
     return db
+
 }
