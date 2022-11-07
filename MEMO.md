@@ -25,3 +25,6 @@
   キャッシュ値なので用いることができるのがuseAsyncData、ただuseFetchはoptionでkeyの指定が可能
   `$fetch`を使うメリットとして、SSRでNuxt3内部のAPI Routesにアクセスする際に内部アクセスで処理される
 - rc6.0の場合はnitro側で把握してくれなかった
+
+## Firestore
+- サーバ上でfirebase-admin/firestoreの方を使い、clientでfirebase/firestoreを使う
