@@ -1,5 +1,5 @@
 import admin from 'firebase-admin';
-import { initializeApp} from 'firebase-admin/app'
+import { initializeApp ,cert } from 'firebase-admin/app'
 import { getFirestore } from "firebase-admin/firestore"
 
 export default async (request, response) => {
@@ -9,8 +9,17 @@ export default async (request, response) => {
         projectId: process.env.FIREBASE_PROJECT_ID,
     }
 
-    const firebase = (admin.apps.length === 0) ? initializeApp(firebaseConfig): undefined
-    const db = getFirestore(firebase)
-    return db
+    const secretURL = process.env.GOOGLE_APPLICATION_CREDENTIALS || ''
 
+    const firebase = (admin.apps.length === 0) ? initializeApp({credential: cert(secretURL)}): undefined
+    const db = getFirestore(firebase)
+
+    const usersRef = db.collection("Users");
+    const snapshot = await usersRef.get();
+
+    snapshot.forEach(doc => {
+        console.log(`テスト ${doc.id} => ${doc.data()}`);
+    });
+
+    return snapshot;
 }

@@ -28,3 +28,4 @@
 
 ## Firestore
 - サーバ上でfirebase-admin/firestoreの方を使い、clientでfirebase/firestoreを使う
+- serverからAPIへアクセスする際にGoogleの認証の設定が必要。[参考記事](https://qiita.com/siumennel/items/267ef12f2a4f189782c2)
