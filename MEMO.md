@@ -29,3 +29,7 @@
 ## Firestore
 - サーバ上でfirebase-admin/firestoreの方を使い、clientでfirebase/firestoreを使う
 - serverからAPIへアクセスする際にGoogleの認証の設定が必要。[参考記事](https://qiita.com/siumennel/items/267ef12f2a4f189782c2)
+
+## ESLint
+- [参考記事](https://lhiroki1205.hatenablog.com/entry/2022/10/13/005338)
+- [esLintの設定方法](https://dev.classmethod.jp/articles/eslint-configurations-2020/)
