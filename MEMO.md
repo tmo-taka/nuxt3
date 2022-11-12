@@ -33,6 +33,9 @@
 ## ESLint
 - [参考記事](https://lhiroki1205.hatenablog.com/entry/2022/10/13/005338)
 - [esLintの設定方法](https://dev.classmethod.jp/articles/eslint-configurations-2020/)
+- [プロパティについて](https://maku.blog/p/j6iu7it/)
+- [プロパティについて2](https://zenn.dev/januswel/articles/402774d76424e71ac906)
+- [書き方](https://zenn.dev/januswel/articles/402774d76424e71ac906)
 - esLintのエラー
 
 エラー名称:恐らくtypescriptの解析をするにあたってvueファイルは対象外だよとエラー
