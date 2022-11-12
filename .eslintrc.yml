@@ -1,17 +1,26 @@
+root: true
 env:
   browser: true
   node: true
   es2021: true
 #typesciptを解釈させる
-parser: '@typescript-eslint/parser'
-#ts.configの場所指定
-parserOptions:
-  project: ./tsconfig.json
 plugins:
   - '@typescript-eslint' # ESLintのTypeScriptプラグインのルールを適用できる様にする（/eslint-pluginは省略可）
+  - 'vue'
 extends:
   - 'eslint:recommended' # ESLintのJavaScriptルールセットを適用
+  - 'plugin:vue/vue3-recommended'
   - 'plugin:@typescript-eslint/eslint-recommended' # eslint:recommendedに含まれるルールを型チェックでカバーできるものは無効化
   - 'plugin:@typescript-eslint/recommended' # 型チェックが不要なルールを適用
   - 'plugin:@typescript-eslint/recommended-requiring-type-checking' # 型チェックが必要なルールを適用
+  # - 'plugin:eslint-plugin-vue'
+  # - '@nuxtjs/eslint-config-typescript'
+#ts.configの場所指定
+parser: 'vue-eslint-parser'
+parserOptions:
+  ecmaVersion: 13
+  parser: '@typescript-eslint/parser'
+  project: ./tsconfig.json
+  extraFileExtensions:
+    - '.vue'
 #rules:

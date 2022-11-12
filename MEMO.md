@@ -33,3 +33,19 @@
 ## ESLint
 - [参考記事](https://lhiroki1205.hatenablog.com/entry/2022/10/13/005338)
 - [esLintの設定方法](https://dev.classmethod.jp/articles/eslint-configurations-2020/)
+- esLintのエラー
+
+エラー名称:恐らくtypescriptの解析をするにあたってvueファイルは対象外だよとエラー
+
+```
+ 0:0  error  Parsing error: ESLint was configured to run on `<tsconfigRootDir>/pages/test.vue` using `parserOptions.project`: <tsconfigRootDir>/../../../../../../users/tomoya.takahara/desktop/自習用/nuxt3/nuxt3/tsconfig.json
+The extension for the file (`.vue`) is non-standard. You should add `parserOptions.extraFileExtensions` to your config
+```
+
+解決方法: vueファイルをパーサーする記述を先に持ってくる必要あり[記事](https://ja.stackoverflow.com/questions/91820/eslint%E3%81%A7vue%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%92%E8%A7%A3%E6%B6%88%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84)
+
+エラー名称: vueファイルのparserがうまくいかないエラー
+
+```
+error  Parsing error: '>' expected
+```
