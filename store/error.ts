@@ -6,16 +6,16 @@ export type Errors ={
 }
 
 export const useErrors = defineStore('errors',{
-    state: ()=> {
+    state: () => {
         return {
             errors: {
                 email: '',
-                password: '',
+                password: ''
             }
         }
     },
     actions: {
-        setError(key: keyof Errors , error :string):void{
+        setError(key: keyof Errors, error :string):void {
             this.errors[key] = error;
         },
         resetErrors():void {

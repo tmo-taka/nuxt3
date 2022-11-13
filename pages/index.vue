@@ -6,8 +6,8 @@
     <NuxtLayout>
         <LoginForm />
         <Welcome />
-        <div v-for="product in data">
-            {{product.name}}
+        <div v-for="product in data" :key="product.id">
+            {{ product.name }}
         </div>
     </NuxtLayout>
 </template>

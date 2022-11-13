@@ -1,13 +1,13 @@
 import {defineStore} from 'pinia'
 
 export const useLanguage = defineStore('language',{
-    state: ()=> {
+    state: () => {
         return {
             languages: ['ja']
         }
     },
     actions: {
-        setLanguage(val :string){
+        setLanguage(val :string) {
             this.languages.push(val)
         }
     }

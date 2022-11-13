@@ -1,33 +1,33 @@
 import {defineStore} from 'pinia'
 
-export type Inputs ={
+export type Inputs = {
     email : string,
     password: string
 }
 
-export type Errors ={
+export type Errors = {
     email : string,
     password: string
 }
 
 export const useInputs = defineStore('inputs',{
-    state: ()=> {
+    state: () => {
         return {
             inputs: {
-                email : '',
-                password: '',
+                email: '',
+                password: ''
             },
             errors: {
                 email: '',
-                password: '',
+                password: ''
             }
         }
     },
     actions: {
-        setValue(key: keyof Inputs , val :string):void{
+        setValue(key: keyof Inputs , val :string):void {
             this.inputs[key] = val;
         },
-        setError(key: keyof Errors , error :string):void{
+        setError(key: keyof Errors , error :string):void {
             this.errors[key] = error;
         },
         resetErrors():void {
