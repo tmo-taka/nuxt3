@@ -11,7 +11,7 @@ const props:Props = withDefaults(defineProps<Props>(),{
 const inputs = useInputs();
 const errors = useErrors();
 
-const judgeError = (props:Props):boolean => errors.errors[props.type] ? true: false
+const judgeError = (props:Props):boolean => errors.errors[props.type] ? true : false
 
 const changeValue = (event: Event,):void | string => {
     if (!(event.target instanceof HTMLInputElement)) {
@@ -23,10 +23,11 @@ const changeValue = (event: Event,):void | string => {
 </script>
 
 <template>
-    <input type="text"
+    <input
+        type="text"
         :value="inputs.inputs[props.type]"
-        @input="changeValue($event)"
-        class="input input-bordered w-full max-w-xs"
         :class="judgeError(props) ? 'input-error bg-red-200 animate-move-lr' : ''"
+        class="input input-bordered w-full max-w-xs"
+        @input="changeValue($event)"
     />
 </template>

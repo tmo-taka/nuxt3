@@ -40,3 +40,9 @@ rules:
   vue/html-indent:
     - 2
     - 4
+  vue/html-self-closing:
+    - 2
+    - html:
+        void:
+          always
+  vue/multi-word-component-names: 0
