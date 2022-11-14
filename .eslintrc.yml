@@ -21,16 +21,17 @@ extends:
   # plugin:はeslint-plugin-などを記載する際に使える。これはpluginsに登録していなくても使える？
   - 'eslint:recommended' # ESLintのJavaScriptルールセットを適用
   # - 'plugin:vue/vue3-recommended'　vue3系は一旦外した
-  - '@nuxtjs/eslint-config-typescript'
-  - 'plugin:nuxt/recommended'
   - 'plugin:@typescript-eslint/eslint-recommended' # eslint:recommendedに含まれるルールを型チェックでカバーできるものは無効化
   - 'plugin:@typescript-eslint/recommended' # 型チェックが不要なルールを適用
   - 'plugin:@typescript-eslint/recommended-requiring-type-checking' # 型チェックが必要なルールを適用
+  - '@nuxtjs/eslint-config-typescript'
+  - 'plugin:nuxt/recommended'
+  - 'prettier' # 一番最後にprettierを入れる
 rules:
   object-curly-spacing: 0
   comma-spacing: 0
   indent:
-    - 2
+    - 'error'
     - 4
   space-before-function-paren: 0
   semi: 0
@@ -38,8 +39,8 @@ rules:
   arrow-parens: 0
   no-console: 0 # 開発中は抜きたい
   vue/html-indent:
-    - 2
-    - 4
+    - 'error'
+    - 8
   vue/html-self-closing:
     - 2
     - html:
